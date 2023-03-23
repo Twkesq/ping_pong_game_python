@@ -19,7 +19,7 @@ count2 = 0
 
 def showEndWindow(window, message):
     font.init()
-    textWindow = font.Font(None, 70).render(message, True, (255, 255, 255))
+    textWindow = font.Font(None, 70).render(message, True, (0, 255, 0))
     while True:
         # обробка подій
         for el in event.get():
@@ -127,6 +127,10 @@ while True:
     for e in event.get():
         if e.type == QUIT:
             sys.exit()
+    if count1 == 5:
+        showEndWindow(main_win, "Red win")
+    elif count2 == 5:
+        showEndWindow(main_win, "Blue win")
 
     player1.update()
     player2.update()
